@@ -9,7 +9,7 @@ const teamSchema = new Schema({
     wins: Number,
     losses: Number,
     location: String,
-    player: [Player.schema]
+    players: [Player.schema]
 });
 
 const Team = mongoose.model('Team', teamSchema);

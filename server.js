@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log('streetball - listining on port', PORT)
+    console.log('streetball - listening on port', PORT)
 })
 
 mongoose.connect(mongoURI, () => {
