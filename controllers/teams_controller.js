@@ -12,28 +12,25 @@ router.get('/', (req, res) => {
 
 //CREATE route
 router.post('/', (req, res) => {
-    Teams.create(req.body, (err, createdTeams) => {
+    Teams.create(req.body, (err, createdTeam) => {
         res.json(createdTeam);
     })
 })
 
 //DELETE route
 router.delete('/:id', (req, res) => {
-    Teams.findByIdAndRemove(req.params.id, (err, deletedTeam) => {
+    Teams.findByIdAndDelete(req.params.id, (err, deletedTeam) => {
         res.json(deletedTeam)
     })
 })
 
 //EDIT route
-
 router.put('/:id', (req, res) => {
     Teams.findByIdAndUpdate(req.params.id, req.body, { new: true },
         (err, updatedTeam) => {
             res.json(updatedTeam)
         })
 })
-
-
 
 
 module.exports = router;

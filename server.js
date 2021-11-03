@@ -10,12 +10,14 @@ app.use(cors())
 
 
 const teamsController = require('./controllers/teams_controller.js')
+const playersController = require('./controllers/players_controller.js')
 app.use('/teams', teamsController)
+app.use('/players', playersController)
+
 
 app.get('/', (req, res) => {
     res.send('API for streetball teams- requests made at /teams')
 })
-
 
 app.listen(PORT, () => {
     console.log('streetball - listining on port', PORT)
