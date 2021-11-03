@@ -1,7 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
 const router = express.Router()
+
+const Team = require('../models/teams.js')
 
 //INDEX route
 router.get('/', (req, res) => {
