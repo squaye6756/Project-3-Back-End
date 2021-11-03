@@ -1,25 +1,26 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
 const router = express.Router()
+//Schema
+const Player = require('../models/players.js')
 
 //INDEX route
 router.get('/', (req, res) => {
-    Players.find({}, (err, foundPlayers) =>{
+    Player.find({}, (err, foundPlayers) =>{
         res.json(foundPlayers)
     })
 })
 
 //CREATE route
 router.post('/', (req, res) => {
-    Players.create(req.body, (err, createdPlayer) => {
+    Player.create(req.body, (err, createdPlayer) => {
         res.json(createdPlayer);
     })
 })
 
 //DELETE route
 router.delete('/:id', (req, res) => {
-    Players.findByIdAndDelete(req.params.id, (err, deletedPlayer) => {
+    Player.findByIdAndDelete(req.params.id, (err, deletedPlayer) => {
         res.json(deletedPlayer)
     })
 })
@@ -27,7 +28,7 @@ router.delete('/:id', (req, res) => {
 //EDIT route
 
 router.put('/:id', (req, res) => {
-    Players.findByIdAndUpdate(req.params.id, req.body, { new: true },
+    Player.findByIdAndUpdate(req.params.id, req.body, { new: true },
         (err, updatedPlayer) => {
             res.json(updatedPlayer)
         })
