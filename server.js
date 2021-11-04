@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
-// const PORT = 3000
+const db = mongoose.connection
 require("dotenv").config()
 // const mongoURI = "mongodb://localhost:27017/streetball"
 const PORT = process.env.PORT || 3003;
