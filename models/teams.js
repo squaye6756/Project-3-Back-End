@@ -9,7 +9,8 @@ const teamSchema = new Schema({
     wins: Number,
     losses: Number,
     location: String,
-    players: [Player.schema]
+    players: [Player.schema],
+    rank: Number
 });
 
 const Team = mongoose.model('Team', teamSchema);
