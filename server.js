@@ -20,7 +20,7 @@ app.use('/players', playersController)
 
 app.get('/', (req, res) => {
     res.send('API for streetball teams- requests made at /teams')
-    console.log(process.env)
+   
 })
 
 app.listen(PORT, () => {
